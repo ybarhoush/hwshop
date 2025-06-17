@@ -1,0 +1,23 @@
+@startuml
+
+abstract class Hardware {
+  - warehouseId : Long
+  - manufacturer : String
+  - model : String
+}
+
+class Server extends Hardware {
+  - processor : String
+  - memory : String
+  - pciBuses : int
+  - pcixBuses : int
+  - pcieBuses : int
+}
+
+class Laptop extends Hardware {
+  - processor : String
+  - memory : String
+  - diskPorts : int
+}
+
+@enduml
