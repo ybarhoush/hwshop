@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
+## [0.5.0] - Integration Testing Complete
+- Added WebTestClient integration tests for SetupController
+- Tests include hardware compatibility validation (SATA, PCI-X)
+- SetupValidationException returned as structured JSON
+
+## [0.4.0] - REST API & DTO Contract Layer
+- REST endpoints for setup lifecycle:
+    - `POST /setup` — create laptop or server setup
+    - `POST /setup/{id}/add` — add disk or storage controller
+    - `POST /setup/{id}/controller/{controllerId}/add` — attach disk to controller
+- `SetupController` with full reactive flow
+- `SetupCreateRequest`, `HardwareAddRequest` request DTOs
+- `SetupResponse`, `DiskDTO`, `ControllerDTO` for clean response contracts
 
 ## [0.3.0] - Setup Logic Complete
 - Implemented `Setup` aggregate with full validation logic
