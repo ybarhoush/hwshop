@@ -1,0 +1,7 @@
+#Warehouse ID,Manufacturer,Model,Size,Port
+4495,Compaq,DGHS18Y,18G,SCSI
+4494,Quantum,ATLAS10K3,73G,SCSI
+4532,Hitachi,HDS5C,3T,SATA
+4345,WD,WD1600BEVT,160G,SATA
+2075,Hitachi,Ultrastar 15k,73G,SAS
+851,Fujitsu,MAX3036,37G,SAS

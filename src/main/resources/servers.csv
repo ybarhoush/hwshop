@@ -1,0 +1,6 @@
+#Warehouse ID,Manufacturer,Model,Processor,Memory,PCI buses,PCI-X busses,PCI-express busses
+4611,HP,Proliant DL380,x86 Xeon,1G,1,3,0
+4309,IBM,x3755,x86 Opteron,32G,0,0,4
+4308,IBM,x3655,x86 Opteron,16G,0,0,3
+4054,Dell,PowerEdge 4400,x86 P3,768M,7,0,0
+2779,IBM,x226,x86 Xeon,2G,0,0,4

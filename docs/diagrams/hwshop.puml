@@ -20,4 +20,28 @@ class Laptop extends Hardware {
   - diskPorts : int
 }
 
+@startuml
+
+abstract class Hardware {
+  - warehouseId : long
+  - manufacturer : String
+  - model : String
+}
+
+class Laptop extends Hardware
+class Server extends Hardware
+class Disk extends Hardware
+class StorageController extends Hardware
+
+interface HardwareRepository
+class CsvHardwareRepository
+
+CsvHardwareRepository --> Laptop
+CsvHardwareRepository --> Server
+CsvHardwareRepository --> Disk
+CsvHardwareRepository --> StorageController
+CsvHardwareRepository ..|> HardwareRepository
+
+@enduml
+
 @enduml

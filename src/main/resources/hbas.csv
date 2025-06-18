@@ -1,0 +1,7 @@
+#Warehouse ID,Manufacturer,Model,Bus,Disk port type,Disk ports
+3691,Highpoint,Rocket 622A,PCI-e,SATA,2
+2582,FastTrak,S150,PCI,SATA,4
+4584,Dell,PERC4,PCI,SCSI,2
+4533,Adaptec,ASR-2120S,PCI-X,SCSI,2
+4537,LSI Logic,SAS311601E,PCI-e,SAS,4
+2233,HP,SmartArray P410,PCI-X,SAS,8
