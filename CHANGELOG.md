@@ -14,7 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Supported adding disks and controllers with checks
 - Added complete unit tests for all Setup validation logic
 - Covered disk compatibility, port limits, and controller rules
-- 
+
 ## [0.2.0] - CSV Parsing Layer Complete
 - Defined abstract `Hardware` class with shared fields
 - Extended `Laptop`, `Server`, `Disk`, `StorageController`
