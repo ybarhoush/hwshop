@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [0.3.0] - Setup Logic Complete
+- Implemented `Setup` aggregate with full validation logic
+- Created `SetupRepository` to store setup states
+- Built `SetupService` with create and add methods
+- Added `SetupValidationException` for rule enforcement
+- Supported adding disks and controllers with checks
+- Added complete unit tests for all Setup validation logic
+- Covered disk compatibility, port limits, and controller rules
+- 
 ## [0.2.0] - CSV Parsing Layer Complete
 - Defined abstract `Hardware` class with shared fields
 - Extended `Laptop`, `Server`, `Disk`, `StorageController`

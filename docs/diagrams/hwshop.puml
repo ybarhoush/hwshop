@@ -42,6 +42,23 @@ CsvHardwareRepository --> Disk
 CsvHardwareRepository --> StorageController
 CsvHardwareRepository ..|> HardwareRepository
 
-@enduml
+class Setup {
+  - id: long
+  - type: SetupType
+  - laptop: Laptop
+  - server: Server
+  - disks: List<Disk>
+  - controllers: List<StorageControllerWithDisks>
+}
+
+class SetupService
+class SetupRepository
+
+Setup --> Laptop
+Setup --> Server
+Setup --> Disk
+Setup --> StorageControllerWithDisks
+SetupService --> SetupRepository
+SetupService --> HardwareRepository
 
 @enduml

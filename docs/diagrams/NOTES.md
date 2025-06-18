@@ -15,3 +15,10 @@
 - Implement CSV loader with CsvHardwareRepository
 - Use inline unit tests for CSV parsing (no file dependency)
 
+## Sprint 3
+### Setup domain logic
+- Models the Setup entity (a build of type server or laptop)
+- Enforces valid hardware configuration rules
+- Supports attaching disks and storage controllers
+- Prep for API
+
