@@ -1,13 +1,11 @@
 @startuml
 
-' Base class
 abstract class Hardware {
   - warehouseId : long
   - manufacturer : String
   - model : String
 }
 
-' Domain models
 class Laptop extends Hardware {
   - processor : String
   - memory : String
@@ -59,14 +57,26 @@ CsvHardwareRepository ..|> HardwareRepository
 class SetupRepository
 class SetupService
 class SetupController
+class RestExceptionHandler
 
-' Relationships
+class SetupCreateRequest
+class HardwareAddRequest
+class SetupResponse
+class DiskDTO
+class ControllerDTO
+
+SetupController --> SetupService
+SetupService --> SetupRepository
+SetupService --> HardwareRepository
 Setup --> Laptop
 Setup --> Server
 Setup --> Disk
 Setup --> StorageControllerWithDisks
-SetupService --> SetupRepository
-SetupService --> HardwareRepository
-SetupController --> SetupService
+
+SetupController --> SetupCreateRequest
+SetupController --> HardwareAddRequest
+SetupController --> SetupResponse
+SetupResponse --> DiskDTO
+SetupResponse --> ControllerDTO
 
 @enduml

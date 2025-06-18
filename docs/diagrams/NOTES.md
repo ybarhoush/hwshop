@@ -28,3 +28,9 @@
 - Add disks or controllers (POST /setup/{id}/add)
 - Adds disks to a specific controller (POST /setup/{id}/controller/{controllerId}/add)
 - Returns full setup state in the response
+
+## Sprint 5
+### WebTestClient to test the actual API endpoints in-memory
+- Added WebTestClient-based integration tests for major scenarios
+- Introduced global exception handling with JSON responses
+- Verified valid/invalid setup paths (e.g. PCI-X, SAS on laptop)
