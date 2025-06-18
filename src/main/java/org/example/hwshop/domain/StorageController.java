@@ -6,7 +6,6 @@ import lombok.*;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StorageController extends Hardware {
@@ -19,4 +18,12 @@ public class StorageController extends Hardware {
 
     @JsonProperty("Disk ports")
     private int diskPorts;
+
+    public StorageController(long warehouseId, String manufacturer, String model,
+                             String bus, String diskPortType, int diskPorts) {
+        super(warehouseId, manufacturer, model);
+        this.bus = bus;
+        this.diskPortType = diskPortType;
+        this.diskPorts = diskPorts;
+    }
 }

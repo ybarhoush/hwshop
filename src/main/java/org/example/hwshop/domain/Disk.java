@@ -6,7 +6,6 @@ import lombok.*;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Disk extends Hardware {
@@ -16,4 +15,11 @@ public class Disk extends Hardware {
 
     @JsonProperty("Port")
     private String port;
+
+    public Disk(long warehouseId, String manufacturer, String model,
+                String size, String port) {
+        super(warehouseId, manufacturer, model);
+        this.size = size;
+        this.port = port;
+    }
 }
