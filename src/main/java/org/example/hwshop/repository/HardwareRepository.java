@@ -1,6 +1,8 @@
 package org.example.hwshop.repository;
 
+import org.example.hwshop.controller.StorageController;
 import org.example.hwshop.domain.*;
+import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 
 public interface HardwareRepository {

@@ -3,6 +3,8 @@ package org.example.hwshop.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.hwshop.controller.StorageController;
+import org.example.hwshop.controller.StorageControllerWithDisks;
 import org.example.hwshop.exception.SetupValidationException;
 
 import java.util.ArrayList;

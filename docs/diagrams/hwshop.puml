@@ -1,9 +1,17 @@
 @startuml
 
+' Base class
 abstract class Hardware {
-  - warehouseId : Long
+  - warehouseId : long
   - manufacturer : String
   - model : String
+}
+
+' Domain models
+class Laptop extends Hardware {
+  - processor : String
+  - memory : String
+  - diskPorts : int
 }
 
 class Server extends Hardware {
@@ -14,51 +22,51 @@ class Server extends Hardware {
   - pcieBuses : int
 }
 
-class Laptop extends Hardware {
-  - processor : String
-  - memory : String
+class Disk extends Hardware {
+  - size : String
+  - port : String
+}
+
+class StorageController extends Hardware {
+  - bus : String
+  - diskPortType : String
   - diskPorts : int
 }
 
-@startuml
-
-abstract class Hardware {
-  - warehouseId : long
-  - manufacturer : String
-  - model : String
+class StorageControllerWithDisks {
+  - controller : StorageController
+  - disks : List<Disk>
 }
 
-class Laptop extends Hardware
-class Server extends Hardware
-class Disk extends Hardware
-class StorageController extends Hardware
+enum SetupType {
+  LAPTOP
+  SERVER
+}
+
+class Setup {
+  - id : long
+  - type : SetupType
+  - laptop : Laptop
+  - server : Server
+  - disks : List<Disk>
+  - controllers : List<StorageControllerWithDisks>
+}
 
 interface HardwareRepository
 class CsvHardwareRepository
-
-CsvHardwareRepository --> Laptop
-CsvHardwareRepository --> Server
-CsvHardwareRepository --> Disk
-CsvHardwareRepository --> StorageController
 CsvHardwareRepository ..|> HardwareRepository
 
-class Setup {
-  - id: long
-  - type: SetupType
-  - laptop: Laptop
-  - server: Server
-  - disks: List<Disk>
-  - controllers: List<StorageControllerWithDisks>
-}
-
-class SetupService
 class SetupRepository
+class SetupService
+class SetupController
 
+' Relationships
 Setup --> Laptop
 Setup --> Server
 Setup --> Disk
 Setup --> StorageControllerWithDisks
 SetupService --> SetupRepository
 SetupService --> HardwareRepository
+SetupController --> SetupService
 
 @enduml

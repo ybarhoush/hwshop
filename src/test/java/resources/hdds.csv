@@ -1,4 +1,4 @@
-Warehouse ID,Manufacturer,Model,Size,Port
+#Warehouse ID,Manufacturer,Model,Size,Port
 4495,Compaq,DGHS18Y,18G,SCSI
 4494,Quantum,ATLAS10K3,73G,SCSI
 4532,Hitachi,HDS5C,3T,SATA

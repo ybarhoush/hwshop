@@ -22,3 +22,9 @@
 - Supports attaching disks and storage controllers
 - Prep for API
 
+## Sprint 4
+### API
+- Create setups (POST /setup)
+- Add disks or controllers (POST /setup/{id}/add)
+- Adds disks to a specific controller (POST /setup/{id}/controller/{controllerId}/add)
+- Returns full setup state in the response
