@@ -33,3 +33,25 @@ mvn spring-boot:run
 
 mvn test
 
+## API Usage Examples (with curl)
+
+curl -X POST http://localhost:8080/setup \
+  -H "Content-Type: application/json" \
+  -d '{"type": "laptop", "hardwareId": 4708}'
+
+Create a Server Setup
+curl -X POST http://localhost:8080/setup \
+  -H "Content-Type: application/json" \
+  -d '{"type": "server", "hardwareId": 4611}'
+
+Add a SATA Disk to a Laptop Setup
+curl -X POST http://localhost:8080/setup/101/add \
+  -H "Content-Type: application/json" \
+  -d '{"type": "disk", "hardwareId": 4495}'
+
+Try to Add SAS Disk to a Laptop (Expected to Fail)
+curl -X POST http://localhost:8080/setup/101/add \
+  -H "Content-Type: application/json" \
+  -d '{"type": "disk", "hardwareId": 3003}'
+
+```

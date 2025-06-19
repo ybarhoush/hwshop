@@ -1,0 +1,25 @@
+
+@startuml
+skinparam style strictuml
+skinparam packageStyle rectangle
+
+actor Client
+participant Controller
+participant Service
+participant Repository
+participant Domain
+participant DTO
+
+Client -> Controller : POST /setup {type: "laptop", id: 4708}
+Controller -> DTO : Parse to HardwareAddRequest
+Controller -> Service : createSetup(type, id)
+Service -> Repository : getAllLaptops()
+Repository -> Service : Flux<Laptop>
+Service -> Domain : new Setup(laptop)
+Domain -> Domain : Validate rules (e.g., disk ports)
+Service -> Repository : save(setup)
+Service -> Controller : return Setup
+Controller -> DTO : Map to SetupResponse
+DTO -> Client : JSON response
+
+@enduml
